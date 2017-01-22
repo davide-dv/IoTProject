@@ -21,7 +21,6 @@ class DBConnection
 
     private function __construct()
     {
-        echo '<script>console.log("Your stuff here")</script>';
         $string = "";
         // Create connection
         $mysqli = new mysqli(SERVER_NAME, USER_NAME, PASSWORD, DATABASE);
