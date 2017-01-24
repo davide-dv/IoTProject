@@ -9,7 +9,7 @@
 		color: white;
 		font-family: "Arial", sans-serif;
 		font-size: 17px;
-		background-color: #5a5959;
+		/*background-color: #5a5959;*/
 		border-radius: 17px;
 		top: 31px;
 		width: 103px;
@@ -1403,10 +1403,10 @@
 		-webkit-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
 		-ms-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
 		transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
-		color: #35b88f;
+		color: white;
 		text-shadow: 0 0 0.5px rgba(53, 184, 143, 0.25);
 		text-decoration: none;
-		border-bottom: dotted 1px rgba(53, 184, 143, 0.5);
+		/*border-bottom: dotted 1px rgba(53, 184, 143, 0.5);*/
 	}
 
 		a:hover {
