@@ -119,6 +119,24 @@ class DBConnection
 
     }
 
+    public function getDataGraphFromQuery($header, $sql){
+
+        $result = $this->_connection->query($sql);
+
+        $text = '[' . $header .",";
+
+        if($result->num_rows > 0) {
+            while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                $text = $text . "['" .$row[0] . "','" . $row[1] . "'],";
+            }
+        } else {
+            //la query non ha prodotto alcun risultato
+        }
+
+        $text = rtrim($text, ",") . ']';
+        return $text;
+    }
+
     public function checkbrute($username) {
         $now = time();
         $valid_attempts = $now - (2 * 60 * 60); //last 2 hours
@@ -135,3 +153,5 @@ class DBConnection
         }
     }
 }
+
+?>

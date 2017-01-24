@@ -10,4 +10,6 @@ abstract class StandardMessages
     const INSUCCESS_REDIRECT = '../Login/index.html';
     const SESSION_ID = "sec_session_id";
     const PASS_KEY = "0p1a2n3t4o5m6i7m8a9";
+    const TEMP_QUERY = "SELECT * FROM `temperature` WHERE 1";
+    const TEMP_HEADER = "['Date','Value']";
 }
