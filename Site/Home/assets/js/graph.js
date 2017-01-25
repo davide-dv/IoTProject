@@ -3,42 +3,41 @@
  */
 
 $(function () {
+
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        var data;
-        $.get( "../common_assets/php/TempGraph.php", function(ret) {
-            //if (ret != "") data = google.visualization.arrayToDataTable(ret);
-            alert(ret);
-        });
-
-        var data2 = google.visualization.arrayToDataTable([
-            ['Director (Year)',  'Rotten Tomatoes', 'IMDB'],
-            ['Alfred Hitchcock (1935)', 8.4,         7.9],
-            ['Ralph Thomas (1959)',     6.9,         6.5],
-            ['Don Sharp (1978)',        6.5,         6.4],
-            ['James Hawes (2008)',      4.4,         6.2]
-        ]);
+        var data = returnGraphData("TempGraph");
 
         var options = {
-            title: 'Company Performance',
+            title: 'Temperature',
             curveType: 'function',
             legend: { position: 'bottom' }
-        };
-
-        var options2 = {
-            title: 'The decline of \'The 39 Steps\'',
-            vAxis: {title: 'Accumulated Rating'},
-            isStacked: true
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
         chart.draw(data, options);
 
-        var chart2 = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+    }
 
-        chart2.draw(data2, options2);
+    returnJsonData("EventsGraph");
+
+    function returnGraphData($page) {
+        var jsonData = returnJsonData($page);
+        var data = new google.visualization.DataTable(jsonData);
+        return data;
+    }
+
+    function returnJsonData($page) {
+        var jsonData = $.ajax({
+            url: "../common_assets/php/" + $page + ".php",
+            dataType: "json",
+            async: false
+        }).responseText;
+        alert(jsonData);
+        return jsonData;
     }
 })
+

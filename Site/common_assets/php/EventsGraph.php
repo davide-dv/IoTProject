@@ -9,8 +9,6 @@
 require ('DBConnection.php');
 require ('StandardMessages.php');
 
-$headers = array(array("Date","string"), array("Value","number"));
-
-echo DBConnection::getInstance()->getDataGraphFromQuery($headers, StandardMessages::TEMP_QUERY);
+echo DBConnection::getInstance()->getJsonFromQuery(StandardMessages::EVENT_QUERY);
 
 ?>

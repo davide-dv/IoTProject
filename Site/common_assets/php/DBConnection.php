@@ -120,21 +120,41 @@ class DBConnection
     }
 
     public function getDataGraphFromQuery($header, $sql){
-
         $result = $this->_connection->query($sql);
-
-        $text = '[' . $header .",";
-
         if($result->num_rows > 0) {
-            while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-                $text = $text . "['" .$row[0] . "','" . $row[1] . "'],";
+            $table = array();
+            foreach ($header as $column) {
+                $table['cols'][] = array('id' => '', 'label' => $column[0], 'type' => $column[1]);;
             }
+            $rows = array();
+            foreach($result as $row){
+                if (count($header) != count($row)) throw  new Exception("Error - Columns number mismatch");
+                $temp = array();
+                foreach ($row as $cell) {
+                    $temp[] = array('v' => $cell);
+                }
+                $rows[] = array('c' => $temp);
+            }
+            $result->free();
+            $table['rows'] = $rows;
+            $jsonTable = json_encode($table, true);
+            return $jsonTable;
         } else {
-            //la query non ha prodotto alcun risultato
+            return "result is empty";
         }
+    }
 
-        $text = rtrim($text, ",") . ']';
-        return $text;
+    public function getJsonFromQuery($sql) {
+        $result = $this->_connection->query($sql);
+        if($result->num_rows > 0) {
+            $emparray = array();
+            foreach($result as $row){
+                $emparray[] = $row;
+            }
+            return json_encode($emparray);
+        } else {
+            return "result is empty";
+        }
     }
 
     public function checkbrute($username) {
