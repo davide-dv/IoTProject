@@ -1,4 +1,7 @@
+package Database;
+
 import java.sql.*;
+import java.lang.*;
 
 /**
  * Created by davide on 25/01/17.
@@ -21,15 +24,14 @@ public class MySQLOperations implements DBOperations{
         }
     }
 
-    public void addEvent(String date, String typology, String note) {
-        if (date == null || date.isEmpty() || typology == null || typology.isEmpty()) {
-            return;
+    public boolean addEvent(String typology) {
+        if (typology == null || typology.isEmpty()) {
+            return false;
         }
         try {
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
             stmt = conn.createStatement();
-            String sql = "INSERT INTO events(date,typology,note) " + "VALUES ('"+date+"','"+typology+"','"+note+"')";
-            //System.out.print(sql);
+            String sql = "INSERT INTO events(typology,note) " + "VALUES ('"+typology+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,17 +48,17 @@ public class MySQLOperations implements DBOperations{
                 se.printStackTrace();
             }
         }
+        return true;
     }
 
-    public void addTemperature(String date, String value) {
-        if (date == null || date.isEmpty() || value == null || value.isEmpty()) {
-            return;
+    public boolean addTemperature(String value) {
+        if (value == null || value.isEmpty()) {
+            return false;
         }
         try {
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
             stmt = conn.createStatement();
-            String sql = "INSERT INTO temperature(date,value) " + "VALUES ('"+date+"','"+value+"')";
-            //System.out.print(sql);
+            String sql = "INSERT INTO temperature(value) " + "VALUES ('"+value+"')";
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -73,6 +75,6 @@ public class MySQLOperations implements DBOperations{
                 se.printStackTrace();
             }
         }
+        return true;
     }
-
 }

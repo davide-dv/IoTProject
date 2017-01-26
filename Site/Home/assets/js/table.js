@@ -6,8 +6,7 @@ $(function(){
 		for(var n=0; n < json.length; n++) {
 			$("#tab").DataTable().row.add([
 				json[n]["typology"],
-				json[n]["date"],
-				json[n]["note"]	
+				json[n]["date"]
 			]).draw();
 		}
 	});
