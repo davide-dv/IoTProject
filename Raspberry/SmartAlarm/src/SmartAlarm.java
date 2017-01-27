@@ -1,4 +1,5 @@
 import Communication.SerialCommChannel;
+import Database.DBOperations;
 import Database.MySQLOperations;
 
 /**
@@ -27,9 +28,9 @@ public class SmartAlarm {
             if (msg.contains(temperature)) {
                 dbop.addTemperature(msg.substring(1));
             } else if (msg.contains(presence)) {
-                dbop.addEvent("presence");
+                dbop.addEvent(DBOperations.TYPOLOGY.PRESENCE);
             } else if (msg.contains(alarm)) {
-                dbop.addEvent("alarm");
+                dbop.addEvent(DBOperations.TYPOLOGY.ALARM);
             }
             Thread.sleep(500);
         }

@@ -5,12 +5,24 @@ package Database;
  */
 public interface DBOperations {
 
+    enum TYPOLOGY {
+        ALARM("alarm"), PRESENCE("presence");
+
+        private final String typology;
+        TYPOLOGY(String typology) {
+            this.typology = typology;
+        }
+        public String getTypology() {
+            return typology;
+        }
+    }
+
     /**
      * To add event record in database.
      * @param typology
      * @return
      */
-    boolean addEvent(String typology);
+    boolean addEvent(TYPOLOGY typology);
 
     /**
      * To add temperature record in database.
