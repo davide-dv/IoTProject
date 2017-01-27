@@ -1,4 +1,4 @@
-package Communication;
+package communication;
 
 /**
  * Simple interface for an async msg communication channel

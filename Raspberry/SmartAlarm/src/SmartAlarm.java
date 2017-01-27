@@ -1,38 +1,16 @@
-import Communication.SerialCommChannel;
-import Database.DBOperations;
-import Database.MySQLOperations;
+import communication.CommThread;
+import controller.ControlPanel;
+import controller.IControlPanel;
 
 /**
  * Created by davide on 25/01/17.
  */
 public class SmartAlarm {
 
-    private static final String temperature = "T";
-    private static final String presence = "P";
-    private static final String alarm = "A";
-
     public static void main(String... args) throws Exception {
-        final MySQLOperations dbop = new MySQLOperations();
+        IControlPanel cp = new ControlPanel();
 
-        final SerialCommChannel channel = new SerialCommChannel(args[0],9600);
-		/* attesa necessaria per fare in modo che Arduino completi il reboot */
-        System.out.println("Waiting Arduino for rebooting...");
-        Thread.sleep(4000);
-        System.out.println("Ready.");
-
-
-        while (true){
-            String msg = channel.receiveMsg();
-            System.out.println("Received: "+msg);
-
-            if (msg.contains(temperature)) {
-                dbop.addTemperature(msg.substring(1));
-            } else if (msg.contains(presence)) {
-                dbop.addEvent(DBOperations.TYPOLOGY.PRESENCE);
-            } else if (msg.contains(alarm)) {
-                dbop.addEvent(DBOperations.TYPOLOGY.ALARM);
-            }
-            Thread.sleep(500);
-        }
+        CommThread ct = new CommThread(args[0], cp);
+        new Thread(ct).start();
     }
 }

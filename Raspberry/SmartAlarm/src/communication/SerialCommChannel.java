@@ -1,4 +1,4 @@
-package Communication;
+package communication;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
