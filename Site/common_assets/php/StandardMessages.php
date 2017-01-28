@@ -11,5 +11,5 @@ abstract class StandardMessages
     const SESSION_ID = "sec_session_id";
     const PASS_KEY = "0p1a2n3t4o5m6i7m8a9";
     const TEMP_QUERY = "SELECT * FROM `temperature` WHERE 1";
-    const EVENT_QUERY = "SELECT date, typology, note FROM `events` WHERE 1";
+    const EVENT_QUERY = "SELECT date, typology FROM `events` WHERE 1";
 }

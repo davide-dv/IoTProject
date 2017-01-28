@@ -6,11 +6,12 @@
 -->
 <html>
 	<head>
-		<title>Overflow by HTML5 UP</title>
+		<title>Jarvis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -59,13 +60,18 @@
 			</article>
 
 		<!-- Feature 2 -->
-			<article class="container box style1 left">
-				<a href="#" class="image fit"><div id="table_div"></div></a>
+			<article class="container box style3">
 				<div class="inner">
 					<header>
 						<h2>Security events</h2>
 					</header>
 				</div>
+				<table id="tab" class="display">
+					<thead>
+						<th>Type</th>
+						<th>Date</th>
+					</thead>
+				</table>
 			</article>
 
 		<section id="footer">
@@ -92,6 +98,8 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+			<script type="text/javascript" src="assets/js/table.js"></script>
 
 	</body>
 </html>

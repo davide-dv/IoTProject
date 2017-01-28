@@ -36,7 +36,6 @@ $(function () {
             dataType: "json",
             async: false
         }).responseText;
-        alert(jsonData);
         return jsonData;
     }
 })
