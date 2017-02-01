@@ -23,7 +23,7 @@ public class MySQLOperations implements DBOperations{
     }
 
     public synchronized boolean addEvent(TYPOLOGY typology) {
-        return this.insertQuery("INSERT INTO events(typology,note) " + "VALUES ('"+typology.getTypology()+"')");
+        return this.insertQuery("INSERT INTO events(typology) " + "VALUES ('"+typology.getTypology()+"')");
     }
 
     public synchronized boolean addTemperature(String value) {
