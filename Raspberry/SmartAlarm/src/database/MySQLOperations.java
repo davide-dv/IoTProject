@@ -22,11 +22,11 @@ public class MySQLOperations implements DBOperations{
         }
     }
 
-    public boolean addEvent(TYPOLOGY typology) {
-        return this.insertQuery("INSERT INTO events(typology,note) " + "VALUES ('"+typology.getTypology()+"')");
+    public synchronized boolean addEvent(TYPOLOGY typology) {
+        return this.insertQuery("INSERT INTO events(typology) " + "VALUES ('"+typology.getTypology()+"')");
     }
 
-    public boolean addTemperature(String value) {
+    public synchronized boolean addTemperature(String value) {
         if (value == null || value.isEmpty()) {
             return false;
         }
