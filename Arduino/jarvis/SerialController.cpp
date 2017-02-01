@@ -4,6 +4,7 @@
 SerialController::SerialController(JarvisHW* js) {
 	_js = js;
 	_start = 0;
+	_temp = 30;
 	_btMsg = new MessageService();
 	Serial.begin(9600);
 }
@@ -19,7 +20,11 @@ void SerialController::tick()
 {
 	if ((millis() - _start) > TEMP_REFRESH) {
 		Serial.print("T");
-		Serial.println(_js->getTempSens()->getValue());
+		float temp;
+		if ((temp = _js->getTempSens()->getValue())>0) {
+			_temp = temp;
+		}
+		Serial.println(_temp);
 		_start = millis();
 	} 
 
