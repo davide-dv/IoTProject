@@ -9,7 +9,7 @@ public class C {
 
     static final int ENABLE_BT_REQUEST = 1;
 
-    static final String ALARM_REQUEST = "m0";
-    static final String SET_ALARM = "m1";
-    static final String NO_SET_ALARM = "m2";
+    static final String ALARM_REQUEST = "TRIGGERED";
+    static final String SET_ALARM = "ACTIVATE";
+    static final String NO_SET_ALARM = "GUARANTEED";
 }
