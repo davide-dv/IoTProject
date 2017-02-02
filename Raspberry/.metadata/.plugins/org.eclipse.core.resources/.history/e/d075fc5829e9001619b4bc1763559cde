@@ -16,6 +16,8 @@ public class Button implements Buttons {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		pin.addListener(new ButtonListener(this));
 	}
 	
 	@Override

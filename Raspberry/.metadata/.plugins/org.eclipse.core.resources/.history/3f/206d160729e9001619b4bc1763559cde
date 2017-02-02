@@ -11,9 +11,9 @@ import observer.Observer;
 public class ObservableButton implements Observable{
 
 	private volatile Deque<Observer> observers = new LinkedList<>();
-	private volatile Buttons button = null;
+	private volatile Button button = null;
 	
-	public ObservableButton(final Buttons button) {
+	public ObservableButton(final Button button) {
 		if (button != null) {
 			this.button = button;
 			Thread control = new Thread(new PinControl(this));
