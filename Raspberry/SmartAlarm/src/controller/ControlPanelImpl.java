@@ -1,5 +1,7 @@
 package controller;
 
+import devices.Button;
+import devices.Buttons;
 import devices.ObservableButton;
 import devices.p4j_impl.Button;
 import devices.p4j_impl.Config;
@@ -16,14 +18,14 @@ import java.io.IOException;
  */
 public class ControlPanelImpl implements ControlPanel, Observer {
 
-    private final Buttons t1 = new Buttons(19);
+    private final ObservableButton ob = new ObservableButton(new Button(19));
     private final Led l1 = new Led(3);
     private final Led l2 = new Led(5);
     private final Led l3 = new Led(4);
 
 
     public ControlPanelImpl(){
-
+        ob.addObserver(this);
     }
 
 
