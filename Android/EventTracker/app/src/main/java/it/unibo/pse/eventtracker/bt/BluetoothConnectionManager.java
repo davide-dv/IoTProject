@@ -47,21 +47,18 @@ public class BluetoothConnectionManager extends Thread {
     public void run() {
         while (!stop) {
             try {
-                int size = btInStream.read();
-                int i = 0;
                 StringBuffer buf = new StringBuffer("");
-
-                while (i < size) {
-                    int data = btInStream.read();
-                    buf.append((char) data);
-                    i++;
+                char data;
+                while ((data=(char)btInStream.read())!='\n') {
+                    Log.d("DEB","while->"+data);
+                    buf.append(data);
                 }
-
-                Log.d(C.LOG_TAG, "> rec done: " + buf);
-
+                Log.d("DEB",buf.toString());
                 dispatchMsg(buf.toString());
+
             } catch (Exception e) {
                 System.err.println(e.toString());
+                Log.d("DEB","3"+stop);
             }
         }
     }

@@ -3,7 +3,6 @@ package controller;
 import devices.Button;
 import devices.Buttons;
 import devices.ObservableButton;
-import devices.p4j_impl.Button;
 import devices.p4j_impl.Config;
 import devices.p4j_impl.GPIOBox;
 import devices.p4j_impl.Led;
