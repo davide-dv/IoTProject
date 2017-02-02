@@ -1,0 +1,17 @@
+package devices;
+
+import observer.Observable;
+import observer.Observer;
+
+public class ButtonObserver implements Observer {
+
+	@Override
+	public void update(final Observable o, final Object arg) {
+		try {
+			
+		} catch (NullPointerException e) {
+			System.out.println("Observable object can't be null");
+		}
+	}
+
+}

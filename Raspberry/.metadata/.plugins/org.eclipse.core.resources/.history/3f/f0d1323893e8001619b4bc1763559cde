@@ -1,0 +1,13 @@
+package observer;
+
+import java.util.Observer;
+
+public interface Observable {
+	
+	void notifyEvent(Event ev);
+
+	void addObserver(Observer obs);
+
+	void removeObserver(Observer obs);
+	
+}

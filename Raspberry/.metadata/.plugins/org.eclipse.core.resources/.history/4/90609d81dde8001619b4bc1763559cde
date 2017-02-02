@@ -1,0 +1,17 @@
+package events;
+
+public class Event implements Events {
+
+	private PossibleEvents event;
+	
+	public Event() {
+		
+	}
+	
+	@Override
+	public PossibleEvents getEvents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

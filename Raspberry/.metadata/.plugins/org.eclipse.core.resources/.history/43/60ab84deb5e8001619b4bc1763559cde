@@ -1,0 +1,20 @@
+package devices;
+
+import java.util.Deque;
+import java.util.LinkedList;
+
+import observer.Event;
+import observer.Observable;
+
+public class ObservableButton implements Observable{
+
+	private Button button;
+	
+	public ObservableButton(Button button) {
+		if (button == null) {
+			this.button = button;
+		} else throw new NullPointerException("Constructor's parameter can't be null");
+	}
+
+	
+}

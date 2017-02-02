@@ -1,0 +1,12 @@
+package devices;
+
+import java.util.Observer;
+
+public class ButtonObserver implements Observer {
+
+	@Override
+	public void update(final java.util.Observable o, final Object arg) {
+		
+	}
+
+}

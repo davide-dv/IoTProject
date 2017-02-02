@@ -1,0 +1,19 @@
+package observer;
+
+public interface Observable {
+	
+	protected void notifyEvent(Event ev);
+
+	public void addObserver(Observer obs){
+		synchronized (observers){
+			observers.add(obs);
+		}
+	}
+
+	public void removeObserver(Observer obs){
+		synchronized (observers){
+			observers.remove(obs);
+		}
+	}
+	
+}

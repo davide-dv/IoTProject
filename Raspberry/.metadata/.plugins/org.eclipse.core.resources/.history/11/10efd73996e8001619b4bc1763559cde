@@ -1,0 +1,38 @@
+package devices;
+
+import java.util.Observer;
+
+import observer.Event;
+import observer.Observable;
+
+public class ObservableButton implements Observable{
+
+	private Button button;
+	
+	public ObservableButton(Button button) {
+		try {
+			
+		} catch (NullPointerException e) {
+			System.out.println("Button parameter can't be null");
+		}
+	}
+	
+	@Override
+	public void notifyEvent(Event ev) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package observer;
+
+public interface Observable {
+
+	void notifyEvent(final Event ev);
+
+	void addObserver(final Observer obs);
+
+	void removeObserver(final Observer obs);
+
+}

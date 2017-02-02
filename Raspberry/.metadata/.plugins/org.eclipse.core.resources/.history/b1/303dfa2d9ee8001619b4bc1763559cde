@@ -1,0 +1,8 @@
+package devices;
+
+import observer.Observable;
+import observer.Observer;
+
+public class ButtonObserver implements Observer {
+
+}

@@ -1,7 +1,5 @@
 package controller;
 
-import common.Observer;
-
 /**
  * Created by davide on 27/01/17.
  */

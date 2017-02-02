@@ -1,0 +1,20 @@
+package devices;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Observer;
+
+import observer.Event;
+
+public class ObservableButton extends Observable{
+
+	private Button button;
+	
+	public ObservableButton(Button button) {
+		if (button == null) {
+			this.button = button;
+		} else throw new NullPointerException("Constructor's parameter can't be null");
+	}
+
+	
+}

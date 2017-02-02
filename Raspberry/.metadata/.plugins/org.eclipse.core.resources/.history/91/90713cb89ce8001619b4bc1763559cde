@@ -1,0 +1,15 @@
+package devices;
+
+import java.util.Observer;
+
+import observer.Observable;
+
+public class ButtonObserver implements Observer {
+
+	@Override
+	public void update(java.util.Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

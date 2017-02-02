@@ -1,0 +1,72 @@
+package devices;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import observer.Event;
+import observer.Observable;
+import observer.Observer;
+
+public class ObservableButton implements Observable{
+
+	private volatile Deque<Observer> observers = new LinkedList<>();
+	
+	public ObservableButton(final Button button) {
+		if (button == null) {
+			Thread control = new Thread();
+		} else throw new NullPointerException("Constructor's parameter can't be null");
+	}
+
+	@Override
+	public synchronized void notifyEvent(final Event ev) {
+		this.observers.forEach(x->{
+			if(ev != null) { 
+				x.update(this, ev);
+			}
+		});
+	}
+
+	@Override
+	public synchronized void addObserver(final Observer obs) {
+		if (obs == null) throw new NullPointerException();
+		else this.observers.addLast(obs);
+	}
+
+	@Override
+	public synchronized void removeObserver(final Observer obs) {
+		if (obs == null) throw new NullPointerException();
+		else this.observers.remove(obs);
+	}
+
+	private class PinControl implements Runnable{
+
+		private Button button = null;
+		private boolean prevState = false;
+		
+		public PinControl(final Button button) {
+			this.button = button;
+		}
+		
+		@Override
+		public void run() {
+			boolean state;
+			while(!Thread.currentThread().isInterrupted()) {
+				state = this.button.isPressed();
+				if (state != this.prevState) {
+					hanleEvent();
+				}
+			}
+		}
+		
+		private void handleEvent(final boolean state) {
+			switch (state) {
+			case 0:
+				
+				break;
+
+			case 1:
+				break;
+			}
+		}
+		
+	}
+}

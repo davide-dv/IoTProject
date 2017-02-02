@@ -1,0 +1,8 @@
+package events;
+
+import observer.Events;
+
+public class Event implements Events {
+
+	
+}

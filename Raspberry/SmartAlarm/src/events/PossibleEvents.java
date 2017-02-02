@@ -1,0 +1,8 @@
+package events;
+
+public enum PossibleEvents {
+
+	IS_PRESSED,
+	IS_RELEASED;
+	
+}

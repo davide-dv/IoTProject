@@ -1,0 +1,41 @@
+package devices;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import observer.Event;
+import observer.Observable;
+import observer.Observer;
+
+public class ObservableButton implements Observable{
+
+	private Button button;
+	private Deque<Observer> observers = new LinkedList<>();
+	private Event event;
+	
+	public ObservableButton(Button button) {
+		if (button == null) {
+			this.button = button;
+		} else throw new NullPointerException("Constructor's parameter can't be null");
+	}
+
+	@Override
+	public void notifyEvent(Event ev) {
+		this.observers.forEach(x->{
+			x.update(this, ev);
+		});
+	}
+
+	@Override
+	public void addObserver(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeObserver(Observer obs) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

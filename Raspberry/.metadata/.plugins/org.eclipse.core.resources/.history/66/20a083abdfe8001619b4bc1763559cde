@@ -1,0 +1,26 @@
+package devices;
+
+import events.Events;
+import observer.Observable;
+import observer.Observer;
+
+public class ButtonObserver implements Observer {
+
+	public ButtonObserver() {
+	}
+	
+	@Override
+	public void update(final Observable obs,final Events ev) {
+		if (obs instanceof ObservableButton) {
+			switch (ev.getEvents()) {
+			case IS_PRESSED:
+				
+				break;
+			case IS_RELEASED:
+				
+				break;
+			}
+		}
+	}
+
+}

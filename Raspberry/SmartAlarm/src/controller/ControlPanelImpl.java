@@ -1,7 +1,5 @@
 package controller;
 
-import common.Event;
-import common.Observer;
 import devices.p4j_impl.Button;
 import devices.p4j_impl.Config;
 import devices.p4j_impl.GPIOBox;

@@ -1,0 +1,17 @@
+package devices;
+
+import observer.Event;
+import observer.Observable;
+import observer.Observer;
+
+public class ButtonObserver implements Observer {
+
+	public ButtonObserver() {
+	}
+	
+	@Override
+	public void update(final Observable obs,final Event ev) {
+
+	}
+
+}
