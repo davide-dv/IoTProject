@@ -48,6 +48,7 @@ public class CommThread implements Runnable {
                     this.cp.setAlarm();
                 }
                 Thread.sleep(500);
+                this.cp.setComunication(false);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
