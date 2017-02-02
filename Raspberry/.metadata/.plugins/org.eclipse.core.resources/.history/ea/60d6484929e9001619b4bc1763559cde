@@ -2,8 +2,6 @@ package devices;
 
 import com.pi4j.io.gpio.*;
 
-import devices.p4j_impl.Config;
-
 public class Button implements Buttons {
 
 	private GpioPinDigitalInput pin;
@@ -16,6 +14,8 @@ public class Button implements Buttons {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		pin.addListener(new ButtonListener(this));
 	}
 	
 	@Override
@@ -23,4 +23,10 @@ public class Button implements Buttons {
 		return pin.isHigh();
 	}
 		
+	@Override
+	public boolean isPressed() {
+		
+		return false;
+	}
+
 }

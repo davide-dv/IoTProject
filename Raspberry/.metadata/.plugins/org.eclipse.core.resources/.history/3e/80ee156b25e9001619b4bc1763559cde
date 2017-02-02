@@ -16,7 +16,7 @@ public class ButtonObserver implements Observer {
 	}
 	
 	@Override
-	public void update(final Observable obs, final Events ev) {
+	public void update(final Observable obs,final Events ev) {
 		if (obs instanceof ObservableButton) {
 			switch (ev.getEvents()) {
 			case IS_PRESSED:

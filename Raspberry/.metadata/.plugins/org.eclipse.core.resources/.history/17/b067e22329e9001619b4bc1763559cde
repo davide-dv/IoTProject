@@ -1,0 +1,11 @@
+package devices;
+
+public class Button implements Buttons {
+
+	@Override
+	public boolean isPressed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

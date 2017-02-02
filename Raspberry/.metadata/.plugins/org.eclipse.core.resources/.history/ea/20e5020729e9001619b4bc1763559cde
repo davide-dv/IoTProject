@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class ControlPanelImpl implements ControlPanel {
 
-    private final Buttons t1 = new Buttons(19);
+    private final Button t1 = new Button(19);
     private final Led l1 = new Led(3);
     private final Led l2 = new Led(5);
     private final Led l3 = new Led(4);
