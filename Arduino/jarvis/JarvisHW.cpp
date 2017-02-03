@@ -3,6 +3,11 @@
 
 JarvisHW::JarvisHW() {
 	int pin[4] = PIN_MOTOR;
+ for(int i=0; i<4; i++) {
+  pinMode(pin[i],OUTPUT);
+ }
+  pinMode(PIN_TEMP,INPUT);
+  pinMode(PIN_PIR,INPUT);
 	_motor = new Motor(pin[0], pin[1], pin[2], pin[3]);
 	_temp = new TemperatureSensor(PIN_TEMP);
 	_pir = new PresenceSensor(PIN_PIR);

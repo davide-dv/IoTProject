@@ -1,3 +1,4 @@
+
 #include "MotorController.hpp"
 #define ATTACK_VALUE 180
 
@@ -14,8 +15,10 @@ void MotorController::init(int period) {
 }
 
 void MotorController::tick() {
-	if (_js->getState() == ALARM) _internalState = ATTACK;
+	if (_js->getState() == ALARM) {
+	_internalState = ATTACK;
 	activateDefence();
+	}
 }
 
 void MotorController::activateDefence() {

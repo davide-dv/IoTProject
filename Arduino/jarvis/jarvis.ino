@@ -14,9 +14,9 @@ void setup()
 	sh.init(5);
 	js = new JarvisHW();
 	sC = new SerialController(js);
-	sC->init(50);
+	sC->init(10);
 	mC = new MotorController(js);
-	mC->init(10);
+	mC->init(20);
 	pC = new PresenceController(js);
 	pC->init(500);
 	sh.addTask(sC);
