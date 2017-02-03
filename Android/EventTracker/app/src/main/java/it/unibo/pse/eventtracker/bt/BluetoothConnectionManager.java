@@ -50,15 +50,13 @@ public class BluetoothConnectionManager extends Thread {
                 StringBuffer buf = new StringBuffer("");
                 char data;
                 while ((data=(char)btInStream.read())!='\n') {
-                    Log.d("DEB","while->"+data);
                     buf.append(data);
                 }
-                Log.d("DEB",buf.toString());
+                Log.d(C.LOG_TAG,buf.toString());
                 dispatchMsg(buf.toString());
 
             } catch (Exception e) {
                 System.err.println(e.toString());
-                Log.d("DEB","3"+stop);
             }
         }
     }

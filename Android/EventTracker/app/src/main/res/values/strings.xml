@@ -5,6 +5,6 @@
     <string name="btUnavailableAlertBtnText">Close APP</string>
 
     <string name="alarm_string">PRESENZA RILEVATA!</string>
-    <string name="btn_set_alarm">attiva allarme</string>
-    <string name="btn_ignore_alarm">ignora</string>
+    <string name="btn_set_alarm">notifica allarme</string>
+    <string name="btn_ignore_alarm">ignora allarme</string>
 </resources>
