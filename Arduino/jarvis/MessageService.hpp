@@ -2,14 +2,14 @@
 #define __MESSAGE_SERVICE_HPP__
 
 #include <Arduino.h>
-#include <SoftwareSerial.h>
 #include "States.hpp"
 #include "PinConfig.hpp"
+#include <SoftwareSerial.h>
 
 class MessageService
 {
 public:
-	MessageService();
+	MessageService(SoftwareSerial* serial);
 	~MessageService();
 	bool messageIsPresent();
 	String getMessage(); 
