@@ -3,6 +3,7 @@ package it.unibo.pse.eventtracker;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,6 +23,7 @@ public class AlarmActivity extends Activity {
             public void onClick(View view) {
                 try {
                     BluetoothConnectionManager.getInstance().sendMsg(C.SET_ALARM);
+                    Log.d("DEB","SET");
                 } catch (MsgTooBigException e) {
                     e.printStackTrace();
                 }
@@ -34,6 +36,7 @@ public class AlarmActivity extends Activity {
             public void onClick(View view) {
                 try {
                     BluetoothConnectionManager.getInstance().sendMsg(C.NO_SET_ALARM);
+                    Log.d("DEB","UNSET");
                 } catch (MsgTooBigException e) {
                     e.printStackTrace();
                 }

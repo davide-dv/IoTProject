@@ -10,6 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -24,7 +25,6 @@ public class MainActivity extends Activity {
 
     private BluetoothAdapter btAdapter;
     private BluetoothDevice targetDevice;
-    private String mode;
     private static MainActivityHandler uiHandler;
 
     @Override
@@ -33,8 +33,9 @@ public class MainActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-        initUI();
         uiHandler = new MainActivityHandler(this);
+        /*Intent i = new Intent(this, AlarmActivity.class);
+        startActivity(i);*/
 
     }
 
@@ -78,15 +79,11 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void initUI() {
-
-    }
-
     private void alarmRequest() {
         Intent i = new Intent(this, AlarmActivity.class);
         startActivity(i);
     }
-
+/*
     public void sendResponse(boolean value) {
         try {
             if (value) {
@@ -98,15 +95,7 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
     }
-
-    private void saveConfiguration() {
-        try {
-            BluetoothConnectionManager.getInstance().sendMsg(this.mode);
-        } catch (MsgTooBigException e) {
-            e.printStackTrace();
-        }
-    }
-
+*/
     public static MainActivityHandler getHandler() {
         return uiHandler;
     }
@@ -161,7 +150,8 @@ public class MainActivity extends Activity {
 
                 switch (message) {
                     case C.ALARM_REQUEST:
-                        context.get().alarmRequest();
+                        //context.get().alarmRequest();
+                        Log.d("DEB","RICEVUTO ALLARME");
                         break;
                 }
             }
