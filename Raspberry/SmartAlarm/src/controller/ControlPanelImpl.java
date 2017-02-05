@@ -14,13 +14,20 @@ import java.io.IOException;
  */
 public class ControlPanelImpl implements ControlPanel, Observer {
 
-    private final ObservableButton ob = new ObservableButton(new Button(19));
+    private final ObservableButton ob = new ObservableButton(new Button(12));
     private final Led l1 = new Led(3);
     private final Led l2 = new Led(5);
     private final Led l3 = new Led(4);
 
 
     public ControlPanelImpl(){
+        try {
+            l1.switchOn();
+            l2.switchOff();
+            l3.switchOff();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         ob.addObserver(this);
     }
 

@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -34,8 +36,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         uiHandler = new MainActivityHandler(this);
-        /*Intent i = new Intent(this, AlarmActivity.class);
-        startActivity(i);*/
 
     }
 
@@ -73,29 +73,14 @@ public class MainActivity extends Activity {
                 connectToTargetBtDevice();
             }
         }
-
-        if (reqID == C.ENABLE_BT_REQUEST && res == Activity.RESULT_CANCELED) {
-            // BT enabling process aborted
-        }
     }
 
     private void alarmRequest() {
         Intent i = new Intent(this, AlarmActivity.class);
         startActivity(i);
+        Log.d("DEB","AR");
     }
-/*
-    public void sendResponse(boolean value) {
-        try {
-            if (value) {
-                BluetoothConnectionManager.getInstance().sendMsg(C.SET_ALARM);
-            } else {
-                BluetoothConnectionManager.getInstance().sendMsg(C.NO_SET_ALARM);
-            }
-        } catch (MsgTooBigException e) {
-            e.printStackTrace();
-        }
-    }
-*/
+
     public static MainActivityHandler getHandler() {
         return uiHandler;
     }
@@ -148,11 +133,9 @@ public class MainActivity extends Activity {
             if (obj instanceof String) {
                 String message = obj.toString();
 
-                switch (message) {
-                    case C.ALARM_REQUEST:
-                        //context.get().alarmRequest();
-                        Log.d("DEB","RICEVUTO ALLARME");
-                        break;
+                if (message.contains(C.ALARM_REQUEST)) {
+                    context.get().alarmRequest();
+                    Log.d(C.LOG_TAG,"RICEVUTO ALLARME");
                 }
             }
 

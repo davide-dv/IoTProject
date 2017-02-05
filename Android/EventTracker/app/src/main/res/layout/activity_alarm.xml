@@ -13,13 +13,27 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <TextView
             android:text="@string/alarm_string"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" />
+            android:gravity="center"
+            android:id="@+id/textView"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/textViewTimer" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="94dp" />
 
         <Button
             android:text="@string/btn_set_alarm"
@@ -32,5 +46,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/buttonIgnore" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="182dp" />
     </LinearLayout>
 </RelativeLayout>

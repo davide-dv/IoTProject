@@ -25,6 +25,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Target BT Device:" />
+    <!--
+        <Button
+            android:text="Test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" />
+            -->
     </LinearLayout>
 
 </RelativeLayout>
