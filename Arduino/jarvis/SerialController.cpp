@@ -32,6 +32,12 @@ void SerialController::tick()
 		_start = millis();
 	} 
 
+	if (_js->getState() == ALARM) {
+		if (Serial.available() && Serial.readString().equals("A_N")) {
+			_js->setState(WAIT);
+		}  
+	}
+
 	switch(_internalState) {
 		case A_WAIT:
 			if (_js->getState() == TRIGGERED)
@@ -45,8 +51,8 @@ void SerialController::tick()
 			String msg = _btMsg->getMessage();
 			if(msg.substring(1).equals("ACTIVATE")) {
 				_js->setState(ALARM);
-				Serial.println("A");
 				_internalState = A_WAIT;
+        Serial.println("A");
 			} else if (msg.substring(1).equals("GUARANTEED")) {
 				_js->setState(WAIT);
 				Serial.println("P");

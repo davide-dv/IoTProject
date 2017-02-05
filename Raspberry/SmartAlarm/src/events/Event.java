@@ -1,5 +1,11 @@
 package events;
 
+/**
+ * 
+ * @author Antonio Tagliente
+ *
+ */
+
 public class Event implements Events {
 
 	private PossibleEvents eventType;

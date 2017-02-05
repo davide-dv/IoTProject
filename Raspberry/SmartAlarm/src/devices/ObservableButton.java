@@ -8,6 +8,12 @@ import events.PossibleEvents;
 import observer.Observable;
 import observer.Observer;
 
+/**
+ * 
+ * @author Antonio Tagliente
+ *
+ */
+
 public class ObservableButton implements Observable{
 
 	private volatile Deque<Observer> observers = new LinkedList<>();

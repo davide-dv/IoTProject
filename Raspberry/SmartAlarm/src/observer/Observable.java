@@ -2,6 +2,12 @@ package observer;
 
 import events.Events;
 
+/**
+ * 
+ * @author Antonio Tagliente
+ *
+ */
+
 public interface Observable {
 
 	void notifyEvent(final Events ev);

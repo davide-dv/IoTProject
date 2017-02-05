@@ -17,13 +17,14 @@ void MotorController::init(int period) {
 void MotorController::tick() {
 	if (_js->getState() == ALARM) {
 	_internalState = ATTACK;
-	activateDefence();
-	}
+	} 
+  activateDefence();
 }
 
 void MotorController::activateDefence() {
 	switch(_internalState) {
 		case NONE:
+      _js->getMotor()->reset();
 			_attackValue = angleConverter(ATTACK_VALUE);
 		break;
 
