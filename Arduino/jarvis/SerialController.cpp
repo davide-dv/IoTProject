@@ -4,7 +4,7 @@
 SerialController::SerialController(JarvisHW* js) {
 	_js = js;
 	_start = 0;
-	_temp = 0;
+	_temp = 27;
 	_internalState = A_WAIT;
 	_bluetooth = new SoftwareSerial(bt[0], bt[1]);
 	Serial.begin(9600);
@@ -23,14 +23,20 @@ void SerialController::tick()
 {
 
 	if ((millis() - _start) > TEMP_REFRESH) {
-		Serial.print("T");
 		float temp;
 		if ((temp = _js->getTempSens()->getValue())>0) {
 			_temp = temp;
-			Serial.println(_temp);
 		}
+    Serial.print("T");
+    Serial.println(_temp);
 		_start = millis();
 	} 
+
+	if (_js->getState() == ALARM) {
+		if (Serial.available() && Serial.readString().equals("A_N")) {
+			_js->setState(WAIT);
+		}  
+	}
 
 	switch(_internalState) {
 		case A_WAIT:
@@ -43,11 +49,11 @@ void SerialController::tick()
 
 		case BT_ADV:
 			String msg = _btMsg->getMessage();
-			if(msg == "ACTIVATE") {
+			if(msg.substring(1).equals("ACTIVATE")) {
 				_js->setState(ALARM);
-				Serial.println("A");
 				_internalState = A_WAIT;
-			} else if (msg == "GUARANTEED") {
+        Serial.println("A");
+			} else if (msg.substring(1).equals("GUARANTEED")) {
 				_js->setState(WAIT);
 				Serial.println("P");
 				_internalState = A_WAIT;
