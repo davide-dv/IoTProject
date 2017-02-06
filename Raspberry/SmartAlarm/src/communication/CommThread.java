@@ -13,15 +13,15 @@ public class CommThread implements Runnable {
     private static final String temperature = "T";
     private static final String presence = "P";
     private static final String alarm = "A";
-    private static final int baudRate = 9600;
+
     private final MySQLOperations dbop;
     private final SerialCommChannel channel;
     private final ControlPanel cp;
 
-    public CommThread(final String port, final ControlPanel cp) throws Exception {
+    public CommThread(final SerialCommChannel channel, final ControlPanel cp) throws Exception {
         this.dbop = new MySQLOperations();
         this.cp = cp;
-        this.channel = new SerialCommChannel(port,baudRate);
+        this.channel = channel;
 
         System.out.println("Waiting Arduino for rebooting...");
         Thread.sleep(4000);

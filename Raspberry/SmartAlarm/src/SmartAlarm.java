@@ -1,4 +1,5 @@
 import communication.CommThread;
+import communication.SerialCommChannel;
 import controller.ControlPanelImpl;
 import controller.ControlPanel;
 
@@ -7,10 +8,14 @@ import controller.ControlPanel;
  */
 public class SmartAlarm {
 
-    public static void main(String... args) throws Exception {
-        ControlPanel cp = new ControlPanelImpl();
+    private static final int baudRate = 9600;
 
-        CommThread ct = new CommThread(args[0], cp);
+    public static void main(String... args) throws Exception {
+        SerialCommChannel channel = new SerialCommChannel(args[0],baudRate);
+
+        ControlPanel cp = new ControlPanelImpl(channel);
+
+        CommThread ct = new CommThread(channel, cp);
         new Thread(ct).start();
     }
 }

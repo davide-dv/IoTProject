@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SmartAlarm.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SmartAlarm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SmartAlarm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,7 +31,7 @@
       <file leaf-file-name="ControlPanelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/ControlPanelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="150">
               <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="SerialCommChannel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/communication/SerialCommChannel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
+            <state relative-caret-position="780">
               <caret line="63" column="60" lean-forward="false" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
               <folding>
                 <element signature="e#1782#1783#0" expanded="true" />
@@ -53,21 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommChannel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/communication/CommChannel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommThread.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/communication/CommThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/IControlPanel.java" />
         <option value="$PROJECT_DIR$/src/ControlPanel.java" />
         <option value="$PROJECT_DIR$/src/Communication/CommThread.java" />
-        <option value="$PROJECT_DIR$/src/SmartAlarm.java" />
         <option value="$PROJECT_DIR$/src/controller/IControlPanel.java" />
         <option value="$PROJECT_DIR$/src/devices/emu/Led.java" />
         <option value="$PROJECT_DIR$/src/common/Msg.java" />
@@ -163,9 +152,10 @@
         <option value="$PROJECT_DIR$/src/controller/ControlPanel.java" />
         <option value="$PROJECT_DIR$/src/database/MySQLOperations.java" />
         <option value="$PROJECT_DIR$/src/observer/Observer.java" />
-        <option value="$PROJECT_DIR$/src/communication/CommThread.java" />
         <option value="$PROJECT_DIR$/src/communication/SerialCommChannel.java" />
         <option value="$PROJECT_DIR$/src/controller/ControlPanelImpl.java" />
+        <option value="$PROJECT_DIR$/src/SmartAlarm.java" />
+        <option value="$PROJECT_DIR$/src/communication/CommThread.java" />
       </list>
     </option>
   </component>
@@ -782,7 +772,7 @@
         <state relative-caret-position="-390">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,37 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SmartAlarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ControlPanelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/communication/SerialCommChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="63" column="60" lean-forward="false" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
-          <folding>
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1812#1813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/communication/CommChannel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -834,10 +793,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ControlPanelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/communication/CommThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/communication/SerialCommChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="63" column="60" lean-forward="false" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+          <folding>
+            <element signature="e#1782#1783#0" expanded="true" />
+            <element signature="e#1812#1813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SmartAlarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
