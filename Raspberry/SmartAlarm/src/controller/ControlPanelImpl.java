@@ -1,6 +1,9 @@
 package controller;
 
+import communication.SerialCommChannel;
 import devices.Button;
+import devices.ButtonObserver;
+import devices.Light;
 import devices.ObservableButton;
 import devices.p4j_impl.Led;
 import events.Events;
@@ -15,27 +18,32 @@ import java.io.IOException;
 public class ControlPanelImpl implements ControlPanel, Observer {
 
     private final ObservableButton ob = new ObservableButton(new Button(12));
-    private final Led l1 = new Led(3);
-    private final Led l2 = new Led(5);
-    private final Led l3 = new Led(4);
+    private final ButtonObserver btnObs;
+    private final Light l1 = new Led(3);
+    private final Light l2 = new Led(5);
+    private final Light l3 = new Led(4);
+    private final SerialCommChannel channel;
 
 
-    public ControlPanelImpl(){
+    public ControlPanelImpl(final SerialCommChannel channel){
         try {
-            l1.switchOn();
-            l2.switchOff();
-            l3.switchOff();
+            this.l1.switchOn();
+            this.l2.switchOff();
+            this.l3.switchOff();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ob.addObserver(this);
+        this.channel = channel;
+        this.btnObs = new ButtonObserver(channel);
+        this.ob.addObserver(this.btnObs);
+        this.ob.addObserver(this);
     }
 
 
     @Override
     public synchronized void setAlarm() {
         try {
-            l1.switchOn();
+            this.l3.switchOn();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,9 +53,9 @@ public class ControlPanelImpl implements ControlPanel, Observer {
     public synchronized void setComunication(boolean state) {
         try {
             if (state) {
-                l2.switchOn();
+                this.l2.switchOn();
             } else {
-                l2.switchOff();
+                this.l2.switchOff();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,7 +68,7 @@ public class ControlPanelImpl implements ControlPanel, Observer {
             switch (ev.getEvents()) {
                 case IS_PRESSED:
                     try {
-                        l3.switchOff();
+                        this.l3.switchOff();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

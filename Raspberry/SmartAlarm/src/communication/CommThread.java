@@ -23,7 +23,6 @@ public class CommThread implements Runnable {
         this.cp = cp;
         this.channel = new SerialCommChannel(port,baudRate);
 
-		/* attesa necessaria per fare in modo che Arduino completi il reboot */
         System.out.println("Waiting Arduino for rebooting...");
         Thread.sleep(4000);
         System.out.println("Ready.");
